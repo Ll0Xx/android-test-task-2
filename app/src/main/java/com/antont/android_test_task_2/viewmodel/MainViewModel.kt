@@ -42,7 +42,6 @@ class MainViewModel(private val application: Application) : AndroidViewModel(app
                         loading.postValue(false)
                         errorMessage.postValue("Error : ${t.message} ")
                     }
-
                 })
             }
         }

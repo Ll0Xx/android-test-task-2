@@ -1,8 +1,13 @@
 package com.antont.android_test_task_2.data
 
-import com.google.gson.annotations.SerializedName
+import com.google.gson.JsonDeserializationContext
+import com.google.gson.JsonDeserializer
+import com.google.gson.JsonElement
+import java.lang.reflect.Type
 import java.math.BigInteger
 import java.time.LocalDate
+import java.time.format.DateTimeFormatter
+
 
 data class Post(
     val id: BigInteger,
@@ -11,11 +16,19 @@ data class Post(
     val userPic: String?,
     val message: String?,
     val photo: String?,
-    @SerializedName("date")
-    val stringDate: String,
-    var parsedDate: LocalDate?
-) {
-    init {
-        parsedDate = LocalDate.parse(stringDate)
+    val date: LocalDate?
+)
+
+internal class DateDeserializer : JsonDeserializer<LocalDate> {
+    override fun deserialize(
+        json: JsonElement?,
+        typeOfT: Type?,
+        context: JsonDeserializationContext?
+    ): LocalDate? {
+        json?.let {
+            val formatter = DateTimeFormatter.ofPattern("EEE MMM dd HH:mm:ss Z yyyy")
+            return LocalDate.parse(json.asString, formatter)
+        }
+        return null
     }
 }
