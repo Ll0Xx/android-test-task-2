@@ -5,7 +5,7 @@ import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Query
 
-interface PostsService {
+interface PostsApi {
     @GET("main/test")
     fun getPostPage(@Query("page") pageNum:Int): Call<PostsPage>
 }
