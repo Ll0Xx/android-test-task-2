@@ -1,4 +1,4 @@
-package com.antont.android_test_task_2.data
+package com.antont.android_test_task_2.retrofit.data
 
 import com.google.gson.annotations.SerializedName
 

@@ -1,6 +1,6 @@
-package com.antont.android_test_task_2
+package com.antont.android_test_task_2.retrofit
 
-import com.antont.android_test_task_2.data.DateDeserializer
+import com.antont.android_test_task_2.retrofit.data.DateDeserializer
 import com.google.gson.GsonBuilder
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory

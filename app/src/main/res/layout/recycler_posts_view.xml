@@ -10,7 +10,7 @@
         android:id="@+id/mainCardView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:backgroundTint="@color/white"
+        android:backgroundTint="@color/background_light"
         app:cardCornerRadius="4dp"
         app:cardElevation="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
