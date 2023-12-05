@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.antont.android_test_task_2.adapter.PostsAdapter
 import com.antont.android_test_task_2.data.Post
 import com.antont.android_test_task_2.databinding.ActivityMainBinding
@@ -23,6 +24,7 @@ class MainActivity : AppCompatActivity() {
 
         val posts:ArrayList<Post> = arrayListOf()
         val adapter = PostsAdapter(posts)
+        binding.recyclerView.layoutManager = LinearLayoutManager(this)
         binding.recyclerView.adapter = adapter
 
         viewModel.loading.observe(this) {

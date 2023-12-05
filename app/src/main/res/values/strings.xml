@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">android-test-task-2</string>
+    <string name="comment">Comment</string>
+    <string name="views">Views: 1/2</string>
 </resources>
